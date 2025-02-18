@@ -16,7 +16,7 @@ def main():
     dispatcher = updater.dispatcher
 
     # You can set this logging module, 
-    so you will know when (and why) things do not work as expected
+    # so you will know when (and why) things do not work as expected
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                         level=logging.INFO)
 
