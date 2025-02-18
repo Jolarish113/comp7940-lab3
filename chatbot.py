@@ -3,13 +3,13 @@
 # chatbot.py
 
 import telegram
-from telegram.ext import Updater, MessageHandler, Filters
+from telegram.ext import Updater, MessageHandler, filters
 import configparser
 import logging
 
 def main():
     # Load your token and create an Updater for your Bot
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     config.read('config.ini')
     updater = Updater(token=config['TELEGRAM']['ACCESS_TOKEN'], use_context=True)
     dispatcher = updater.dispatcher
@@ -20,7 +20,7 @@ def main():
                         level=logging.INFO)
 
     # register a dispatcher to handle message: here we register an echo handler
-    echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
+    echo_handler = MessageHandler(filters.text & (~filters.command), echo)
     dispatcher.add_handler(echo_handler)
 
     # To start the bot:
