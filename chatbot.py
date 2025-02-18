@@ -1,11 +1,10 @@
 # this file is based on version 13.7 of python telegram chatbot
 # and version 1.26.1 of urllib3
-
 # chatbot.py
 
 import telegram
 from telegram.ext import Updater, MessageHandler, Filters
-import ConfigParser
+import configparser
 import logging
 
 def main():
